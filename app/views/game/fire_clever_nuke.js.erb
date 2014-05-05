@@ -1,0 +1,27 @@
+var player = $('#player');
+var player_grid = player[0].getContext('2d');
+
+var oponent = $('#oponent');
+var oponent_grid = oponent[0].getContext('2d');
+
+
+	$("#players_sunk").append("<%= @oponent_response['sunk'] ? @oponent_response['sunk']+'//'.html_safe : nil %>");//
+	$("#oponents_sunk").append("<%= @response['sunk'] ? @response['sunk']+'//'.html_safe : nil %>");
+// if (<%= @won %> != ""){
+  $('#game_status').val("<%= @response['prize'] %>");
+
+// }else{
+// 	$('#game_status').val("Busy");
+	
+	if("<%= @oponent_response['status'] %>" == "miss"){
+	  drawMiss(player_grid, <%= @response["x"] %>, <%= @response["y"] %>);
+	}else{
+		drawHit(player_grid, <%= @response["x"] %>, <%= @response["y"] %>);
+	}
+
+	if("<%= @response['status'] %>" == "miss"){
+	  drawMiss(oponent_grid, <%= @fired_at["x"] %>, <%= @fired_at["y"] %>);
+	}else{
+		drawHit(oponent_grid, <%= @fired_at["x"] %>, <%= @fired_at["y"] %>);
+	}
+// }

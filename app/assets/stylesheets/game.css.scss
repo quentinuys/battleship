@@ -1,0 +1,27 @@
+canvas#oponent{
+	background: image-url('sea_top_view.jpg');
+}
+canvas#player{
+	@extend canvas#oponent;
+}
+.board{
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+}
+.board-player{
+	@extend .board;
+}
+.board-oponent{
+	@extend .board;
+}
+
+.controller{
+	@extend .board;
+}
+.oponents_sunk{
+	float: left;
+}
+.players_sunk{
+float: left;
+}

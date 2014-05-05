@@ -3,8 +3,11 @@ Battleship::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'game#index'
 
+  post '/start_game' => 'game#start_game', as: 'game_path'
+  post '/draw_ships' => 'game#draw_ships', as: 'draw_ship_path'
+  post '/fire_nuke' => 'game#fire_clever_nuke', as: 'fire_clever_path'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

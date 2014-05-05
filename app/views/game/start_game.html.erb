@@ -1,0 +1,41 @@
+<header id="header" class="">
+	
+</header><!-- /header -->
+<nav class="controller">
+	<%= button_tag "Player", id: "show_player", class: "btn btn-info" %>
+	<%= button_tag "Oponent", id: "show_oponent", class: "btn btn-info" %>
+</nav>
+<section>
+
+	<div class="board-oponent">
+		<div id="oponents_sunk">
+		</div>
+		<canvas id="oponent" height="600" width="600">
+		</canvas><br/>
+	</div>	
+
+	<div class="board-player">
+		<div id="players_sunk">
+		</div>
+		<canvas id="player" height="600" width="600">
+		</canvas><br/>
+	</div>
+
+	<div class="controller">
+		<span><%= label_tag :game_status %>
+		<%= text_field_tag :game_status %></span>
+		<%= button_tag "Fire Nuke", id: "fire_clever", class: "btn btn-success" %>			
+	</div>
+	<%= hidden_field_tag :oponent_id, @oponent_id %>
+	<%= hidden_field_tag :player_id, @player_id %>
+</section>
+<script type="text/javascript">
+	var player = $('#player');
+	var player_grid = player[0].getContext('2d');
+
+  if("<%= @oponent_response['status'] %>" == "miss"){
+	  drawMiss(player_grid, <%= @oponent_response["x"] %>, <%= @oponent_response["y"] %>);
+	}else{
+		drawHit(player_grid, <%= @oponent_response["x"] %>, <%= @oponent_response["y"] %>);
+	}
+</script>

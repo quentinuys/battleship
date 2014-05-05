@@ -1,0 +1,19 @@
+<section>
+	<header>
+		<h1>Battleship</h1>
+	</header><!-- /header -->
+	<article>
+		<%= form_tag('/start_game') do -%>
+			<div class="field">
+				<%= label_tag :name -%><br>
+				<%= text_field_tag :name -%>
+			</div>
+			<div class="field">
+				<%= label_tag :email -%><br>
+				<%= email_field_tag :email -%>
+			</div><br>
+			<%= submit_tag "Start Game", class: "btn btn-success" -%>
+		<% end -%>
+	</article>
+</section>
+

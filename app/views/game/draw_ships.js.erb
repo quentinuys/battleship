@@ -1,0 +1,6 @@
+var player = $('#player');
+var player_grid = player[0].getContext('2d');
+
+<% @player_ships.each do |ship| %>
+	drawShip(player_grid, <%= ship.location_x %>, <%= ship.location_y %>, <%= ship.size %>, "<%= ship.direction %>");
+<% end %>
