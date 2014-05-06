@@ -143,8 +143,8 @@ private
 		width ||= @participant.board.grid_width
 		height ||= @participant.board.grid_height
 
-		(0...width).to_a.each do |x|
-			(0...height).to_a.each do |y|
+		(1..width).to_a.each do |x|
+			(1..height).to_a.each do |y|
 			  board_space << {x:x, y:y}
 			end		
 		end
@@ -152,10 +152,7 @@ private
 	end
 
 	def hit_response_json
-		puts "--------------------------------------------"
-		puts @hit_response_raw
-		puts "--------------------------------------------"
-		@hit_response = @hit_response_raw #.parsed_response
+		@hit_response = @hit_response_raw.parsed_response
 	end
 
 	def available_nuke_space

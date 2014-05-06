@@ -28,11 +28,9 @@ class GameController < ApplicationController
 
 		player_nuke.fire_clever_nuke!
 
-		@response = @player_nuke.hit_response.parsed_response
-		@fired_at = @player_nuke.fired_at_space
-		puts "-------------------------------------------"
-		puts @response
-		puts "-------------------------------------------"
+		@response = @player_nuke.hit_response
+		@fired_at = @player_nuke.fired_at_space.parsed_response
+
 		fire_nuke(@response["x"], @response["y"])
 		@oponent_response = @oponent_nuke.hit_response
 

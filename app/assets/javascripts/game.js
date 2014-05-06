@@ -105,8 +105,8 @@ function drawShip(grid, x, y, size, direction){
 	var shipLength = size * grid_size;
 	var shipWidth = grid_size;
 
-	var startX = (x * grid_size) + 8;
-	var startY = (y * grid_size) + 8;
+	var startX = ((x-1) * grid_size) + 8;
+	var startY = ((y-1) * grid_size) + 8;
 
 	if(direction == "vertical"){
 		var endX = shipWidth - 16;

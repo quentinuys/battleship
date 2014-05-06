@@ -24,7 +24,7 @@ describe Game::GameCmd do
 		before{cmd.execute!}
 
 		it "Should have valid response" do
-			cmd.game_result.should eq(result)
+			cmd.game_result.parsed_response.should eq(result)
 		end
 
 		context "Game Returned" do

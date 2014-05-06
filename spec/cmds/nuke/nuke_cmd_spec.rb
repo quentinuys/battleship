@@ -74,7 +74,7 @@ describe Nuke::NukeCmd do
 				oponent_cmd.fire_nuke!(5, 6)
 			end
 			it "Should have hit response" do
-				oponent_cmd.hit_response.should eq({"id"=>nil, "x"=>nil, "y"=>nil, "status"=>"hit", "sunk"=>nil, "game_status"=>nil, "error"=>nil, "prize"=>nil})
+				oponent_cmd.hit_response.should eq({"id"=>1, "x"=>5, "y"=>6, "status"=>"hit", "sunk"=>nil, "game_status"=>nil, "error"=>nil, "prize"=>nil})
 			end			
 		end
 
@@ -87,7 +87,7 @@ describe Nuke::NukeCmd do
 				oponent_cmd.fire_nuke!(5, 6)
 			end
 			it "Should sink ship" do
-				oponent_cmd.hit_response.should eq({"id"=>nil, "x"=>nil, "y"=>nil, "status"=>"hit", "sunk"=>"Carrier", "game_status"=>nil, "error"=>nil, "prize"=>nil})
+				oponent_cmd.hit_response.should eq({"id"=>1, "x"=>5, "y"=>6, "status"=>"hit", "sunk"=>"Carrier", "game_status"=>nil, "error"=>nil, "prize"=>nil})
 			end
 		end
 
@@ -97,7 +97,7 @@ describe Nuke::NukeCmd do
 				oponent_cmd.fire_nuke!(6, 8)
 			end
 			it "Should have hit response" do
-				oponent_cmd.hit_response.should eq({"id"=>nil, "x"=>nil, "y"=>nil, "status"=>"miss", "sunk"=>nil, "game_status"=>nil, "error"=>nil, "prize"=>nil})
+				oponent_cmd.hit_response.should eq({"id"=>1, "x"=>6, "y"=>8, "status"=>"miss", "sunk"=>nil, "game_status"=>nil, "error"=>nil, "prize"=>nil})
 			end			
 		end
 	end

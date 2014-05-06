@@ -42,8 +42,8 @@ private
 		@grid_size = 10
 		@ship_size = ship_size
 		begin
-			@x = rand(@grid_size)
-			@y = rand(@grid_size)
+			@x = rand(@grid_size) + 1
+			@y = rand(@grid_size) + 1
 			@direction = directions[rand(2)-1]
 		end while !valid_ship?
 
