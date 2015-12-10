@@ -57,7 +57,10 @@ end
 
 group :test, :development do
 
-	gem 'debugger', :git => "https://github.com/cldwalker/debugger.git"
+	gem 'pry-byebug'
+	gem 'pry-coolline'
+	gem 'ruby-graphviz'
+	gem 'rails-erd'
 	gem 'rspec-rails'
 	gem 'database_cleaner'
 

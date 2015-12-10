@@ -152,7 +152,7 @@ private
 	end
 
 	def hit_response_json
-		@hit_response = @hit_response_raw.parsed_response
+		@hit_response = @hit_response_raw
 	end
 
 	def available_nuke_space

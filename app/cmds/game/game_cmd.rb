@@ -29,7 +29,7 @@ private
 		puts "----------------------------------------"
 		puts @game_result_raw
 		puts "----------------------------------------"
-		@game_result = @game_result_raw #.parsed_response
+		@game_result = @game_result_raw.parsed_response
 	end
 
 	def battleship_id

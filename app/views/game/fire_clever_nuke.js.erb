@@ -4,7 +4,7 @@ var player_grid = player[0].getContext('2d');
 var oponent = $('#oponent');
 var oponent_grid = oponent[0].getContext('2d');
 
-
+	alert("<%= @response %>");
 	$("#players_sunk").append("<%= @oponent_response['sunk'] ? @oponent_response['sunk']+'//'.html_safe : nil %>");//
 	$("#oponents_sunk").append("<%= @response['sunk'] ? @response['sunk']+'//'.html_safe : nil %>");
 // if (<%= @won %> != ""){

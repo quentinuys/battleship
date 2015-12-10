@@ -13,9 +13,9 @@ Bundler.require(:default, Rails.env)
 
 module Battleship
   class Application < Rails::Application
-    config.paths.add "app/cmd", :glob => "**/*.rb" 
+    config.paths.add "app/cmds", :glob => "**/*.rb" 
     config.autoload_paths += %W(#{config.root}/lib
-                        #{config.root}/app/cmd/*
+                        #{config.root}/app/cmds/*
                         #{config.root}/lib/tasks)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

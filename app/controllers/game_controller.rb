@@ -24,12 +24,13 @@ class GameController < ApplicationController
 	end
 
 	def fire_clever_nuke
+		binding.pry
 		get_players(params)
 
 		player_nuke.fire_clever_nuke!
 
 		@response = @player_nuke.hit_response
-		@fired_at = @player_nuke.fired_at_space.parsed_response
+		@fired_at = @player_nuke.fired_at_space
 
 		fire_nuke(@response["x"], @response["y"])
 		@oponent_response = @oponent_nuke.hit_response

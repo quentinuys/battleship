@@ -62,6 +62,7 @@ function drawHorizontal(grid, grid_height){
 		grid.stroke();
 	}
 }
+
 function drawVertical(grid, grid_width){
 	for(i=0; i < 10; i++){
 		grid.beginPath();
@@ -121,6 +122,4 @@ function drawShip(grid, x, y, size, direction){
 	grid.rect(startX, startY, endX, endY);
 	grid.closePath();
 	grid.fill();
-
 }
-
